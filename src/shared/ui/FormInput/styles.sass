@@ -1,0 +1,64 @@
+@import '~/shared/styles/_variables'
+
+.form-input
+    position: relative
+
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+
+    box-sizing: border-box
+    border: 2px solid $yellow-color
+    width: 100%
+
+    box-sizing: border-box
+    padding: 8px 12px
+
+    background: linear-gradient($white-color, $white-color) padding-box, linear-gradient(160deg, $rose-light-color, $yellow-light-color) border-box
+    border-radius: 20px
+    transition: all .4s ease
+    border: 4px solid transparent
+
+    @media (max-width: 480px)
+        padding: 3px 12px
+
+    &:focus-within
+        background: linear-gradient($white-color, $white-color) padding-box, linear-gradient(160deg, $rose-color, $yellow-color) border-box
+
+    &__icon-wrapper
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: auto 0
+
+    .error-icon-state
+        animation: horizontal-shaking .5s
+        animation-iteration-count: 1
+
+    input
+        width: 100%
+        font-size: 18px
+        line-height: 21px
+        margin-left: 12px
+        border: none
+        outline: none
+        background: $white-color
+        color: $font-dark-color
+        @include montserrat-bold
+        &::placeholder
+            color: $font-color
+            @include montserrat
+
+@keyframes horizontal-shaking
+    0%
+        transform: translateX(0)
+    25%
+        transform: translateX(2px)
+    50%
+        transform: translateX(-2px)
+    75%
+        transform: translateX(2px)
+    100%
+        transform: translateX(0)

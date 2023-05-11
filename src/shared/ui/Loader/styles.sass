@@ -1,0 +1,41 @@
+@import '~/shared/styles/_variables'
+
+.loader
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+
+    width: 140px
+    height: 140px
+
+    background: linear-gradient(to bottom, $rose-color, $yellow-color)
+    border-radius: 50%
+
+    -webkit-animation: rotating 2s linear infinite
+    -moz-animation: rotating 2s linear infinite
+
+
+    & > div
+        width: 100px
+        height: 100px
+
+        border-radius: 50%
+        background: white
+
+@-webkit-keyframes rotating 
+    from 
+        -webkit-transform: rotate(0deg)
+    
+    to 
+        -webkit-transform: rotate(360deg)
+    
+
+
+@-moz-keyframes rotating 
+    from 
+        -moz-transform: rotate(0deg)
+    
+    to 
+        -moz-transform: rotate(360deg)
+    

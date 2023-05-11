@@ -1,0 +1,123 @@
+@import '~/shared/styles/_variables'
+
+$form-title-line-height: 38px
+$form-title-font-size: 36px
+$form-title-font-margin-bottom: 30px
+$form-title-sum-height: 68px
+
+$form-title-line-height-media: 32px
+$form-title-font-size-media: 30px
+$form-title-font-margin-bottom-media: 20px
+$form-title-sum-height-media: 52px
+
+$form-submit-button-sum-height: 40px
+
+.form-wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    position: relative
+
+    width: 30vw
+    height: 50vh
+    min-width: 400px
+    min-height: 470px
+
+    background-clip: padding-box
+
+    box-sizing: border-box
+    padding: 48px 8px
+
+    @media (max-width: 480px)
+        width: 90vw
+        min-width: 90vw
+    @media (max-height: 600px)     
+        height: 90vh
+        min-height: 90vh
+    &::before
+        content: ""
+        position: absolute
+        inset: 0
+        border-radius: 50px
+        padding: 10px
+        background: linear-gradient(to bottom, $rose-color, $yellow-color)
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)
+        -webkit-mask-composite: xor
+        mask-composite: exclude
+        z-index: -1
+
+.form-section
+    position: relative
+    height: 100%
+    width: 90%
+
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+
+    form
+        position: relative
+        display: block
+        width: 90%
+        max-height: 100%
+        height: calc(100% - $form-title-sum-height)
+        box-sizing: border-box
+
+        @media (max-width: 480px)
+            height: calc(100% - $form-title-sum-height-media)
+        & > div
+            position: relative
+            width: 100%
+            height: calc(100% - $form-submit-button-sum-height)
+            display: flex
+            flex-direction: column
+            align-items: center
+
+    &__form-title
+        color: $font-dark-color
+        @include montserrat-bold
+
+        font-size: $form-title-font-size
+        line-height: $form-title-line-height
+        margin-bottom: $form-title-font-margin-bottom
+
+        text-transform: uppercase
+
+        @media (max-width: 480px)
+            font-size: $form-title-font-size-media
+            line-height: $form-title-line-height-media
+            margin-bottom: $form-title-font-margin-bottom-media
+
+    &__submit-button
+        position: relative
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: center
+
+        height: $form-submit-button-sum-height
+
+        box-sizing: border-box
+        padding: 8px 52px
+        margin: 0 auto
+
+        border: none
+        border-radius: 20px
+        cursor: pointer
+
+        background-image: linear-gradient(140deg, $rose-color, $yellow-light-color)
+        background-size: 200%
+        background-position: 0 0
+
+        transition: background-position 0.5s
+        &:hover
+            background-position: 50% 0px
+
+    &__submit-button-text
+        color: $white-color
+        @include montserrat-bold
+        font-size: 21px
+        line-height: 24px
+        text-transform: uppercase
