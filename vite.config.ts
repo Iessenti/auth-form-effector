@@ -4,10 +4,10 @@ import react from '@vitejs/plugin-react'
 
 import path from 'node:path'
 
-import {mockServerConfig} from './mock-server.config';
-import { startMockServer } from 'mock-config-server';
+// import {mockServerConfig} from './mock-server.config';
+// import { startMockServer } from 'mock-config-server';
 
-startMockServer(mockServerConfig)
+// startMockServer(mockServerConfig)
 
 // https://vitejs.dev/config/
 export default defineConfig({
